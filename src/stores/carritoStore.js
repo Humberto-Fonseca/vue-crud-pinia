@@ -74,6 +74,23 @@ export const useCarritoStore = defineStore('carrito', {
     },
 
     /**
+     * Disminuye en 1 la cantidad de un producto en el carrito.
+     * Si la cantidad llega a 0, lo elimina del carrito.
+     * @param {string|number} id - Identificador del producto
+     */
+    decrementarCantidad(id) {
+      const item = this.items.find(item => String(item.id) === String(id))
+      if (!item) return
+
+      if (item.cantidad > 1) {
+        item.cantidad -= 1
+        this.guardarEnStorage()
+      } else {
+        this.eliminarDelCarrito(id)
+      }
+    },
+
+    /**
      * Elimina un producto específico del carrito por su ID.
      * @param {string|number} id - Identificador del producto
      */
