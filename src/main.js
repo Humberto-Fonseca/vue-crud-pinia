@@ -1,12 +1,17 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import router from './router/index.js'
 import App from './App.vue'
 
-// Creación de la aplicación de Vue
+// Creación de la instancia de la aplicación Vue
 const app = createApp(App)
 
-// Configuración de Pinia para el estado global
+// Inicialización de Pinia (Estado Global)
 const pinia = createPinia()
 app.use(pinia)
 
+// Inicialización de Vue Router (Navegación SPA)
+app.use(router)
+
+// Montaje de la aplicación en el elemento contenedor
 app.mount('#app')
