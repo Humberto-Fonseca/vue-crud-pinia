@@ -53,7 +53,7 @@ const carritoStore = useCarritoStore()
 
     <!-- Pie de página informativo -->
     <footer class="app-footer">
-      <p>Proyecto Académico Vue 3 + Pinia + Vue Router — Desarrollado por Humberto Fonseca</p>
+      <p>Desarrollado por Humberto Fonseca - Jose Jafeth - Roberto Trapella</p>
     </footer>
   </div>
 </template>
